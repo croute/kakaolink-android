@@ -108,14 +108,14 @@ Map<String, String> metaInfoAndroid = new Hashtable<String, String>(1);
 metaInfoAndroid.put("os", "android");
 metaInfoAndroid.put("devicetype", "phone");
 metaInfoAndroid.put("installurl", "market://details?id=com.kakao.talk");
-metaInfoAndroid.put("executeurl", "kakaoLinkTest://starActivity");
+metaInfoAndroid.put("executeurl", "kakaoLinkTest://startActivity");
 
 // If application is support ios platform.
 Map<String, String> metaInfoIOS = new Hashtable<String, String>(1);
 metaInfoIOS.put("os", "ios");
 metaInfoIOS.put("devicetype", "phone");
 metaInfoIOS.put("installurl", "your iOS app install url");
-metaInfoIOS.put("executeurl", "kakaoLinkTest://starActivity");
+metaInfoIOS.put("executeurl", "kakaoLinkTest://startActivity");
 
 // add to array
 metaInfoArray.add(metaInfoAndroid);
@@ -158,7 +158,7 @@ kakaoLink.openKakaoAppLink(
     </intent-filter>
     <!-- custom scheme(execute url) -->
     <intent-filter>
-        <data android:scheme="kakaoLinkTest" android:host="starActivity" />
+        <data android:scheme="kakaoLinkTest" android:host="startActivity" />
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.BROWSABLE" />
         <category android:name="android.intent.category.DEFAULT" />
@@ -175,23 +175,23 @@ kakaoLink.openKakaoAppLink(
 ### 사용 예
 
 ```java
-// send Text  
+// Sending Text  
 Intent intent = new Intent(Intent.ACTION_SEND);
 intent.setType("text/plain");
 intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
 intent.putExtra(Intent.EXTRA_TEXT, "Text");
 
-// send Image
+// Sending Images
 Intent intent = new Intent(Intent.ACTION_SEND);
 intent.setType("image/png");
 intent.putExtra(Intent.EXTRA_STREAM, Uri.parse(path));
 
-// send video
+// Sending Video types
 Intent intent = new Intent(Intent.ACTION_SEND);
 intent.setType("video/3gpp");
 intent.putExtra(Intent.EXTRA_STREAM, Uri.parse(path));
 
-// You want to send to KakaoTalk, use this line.
+// Add the following code if you wish to send directly to KakaoTalk
 intent.setPackage("com.kakao.talk");
 ```
 
