@@ -22,7 +22,7 @@
 안드로이드폰
 ------------
 
-Android에서는 Intent and IntentFilter를 사용하여 카카오링크를 호출합니다. <br />
+Android에서는 [Intents and Intent Filters](http://developer.android.com/guide/components/intents-filters.html)를 사용하여 카카오링크를 호출합니다. <br />
 전달하려는 링크의 종류에 따라 URL 링크와 App 링크로 구분됩니다.
 
 URL 링크 전달
@@ -195,3 +195,9 @@ intent.putExtra(Intent.EXTRA_STREAM, Uri.parse(path));
 intent.setPackage("com.kakao.talk");
 ```
 
+개발자용 카카오톡 B.I 다운로드
+--------------------------
+
+### [Kakaotalk_BI.zip](http://alpha.kakao.com/images/v2/link/kakaotalk_icon.zip)
+
+*B.I는 카카오링크를 이용하여 카카오톡으로 메시지를 전송하는 기능을 안내하는 버튼/페이지에 한하여 사용하셔야 하며, 다른 페이지나 메뉴 등에서 위 이미지를 그대로 또는 일부 변형하여 사용자가 카카오 제작 앱으로 혼동하게 하시면 안됩니다. 
